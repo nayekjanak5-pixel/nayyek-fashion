@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NAYYEK — Premium Fashion</title>
+
+  <meta
+    name="description"
+    content="NAYYEK — Wear Your Identity. Premium everyday fashion."
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- TOP ANNOUNCEMENT -->
+  <div class="announcement">
+    FREE SHIPPING OVER ₹5,000 • EASY RETURNS • NEW COLLECTION 2026
+  </div>
+
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <a href="#" class="logo">
+  nayyek
+</a>
+
+    <nav id="nav">
+      <a href="#shop">Shop</a>
+      <a href="#collections">Collections</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+
+  <button
+  type="button"
+  class="nayyek-search-btn"
+  aria-label="Search"
+  onclick="toggleSearch()"
+  title="Search"
+>
+  <span class="search-icon"></span>
+  <span class="search-text">SEARCH</span>
+</button>
+
+  <button
+    type="button"
+    aria-label="Wishlist"
+    onclick="openWishlist()"
+    title="Wishlist"
+  >
+    ♡ <span id="wishCount">0</span>
+  </button>
+
+  <button
+    type="button"
+    aria-label="Shopping Bag"
+    onclick="openCart()"
+    title="Shopping Bag"
+  >
+    Bag (<span id="cartCount">0</span>)
+  </button>
+
+  <button
+    type="button"
+    class="menu-btn"
+    aria-label="Menu"
+    onclick="toggleMenu()"
+  >
+    ☰
+  </button>
+
+</div>
+  </header>
+
+
+  <!-- SEARCH -->
+  <div id="searchBox" class="search-box">
+
+    <input
+      id="searchInput"
+      type="text"
+      placeholder="Search T-shirts, shirts, shorts..."
+      oninput="searchProducts()"
+    >
+
+  </div>
+
+
+  <main>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          NAYYEK / NEW SEASON 2026
+        </p>
+
+        <h1>
+          WEAR<br>
+          <em>YOUR</em><br>
+          IDENTITY.
+        </h1>
+
+        <p class="hero-text">
+          Modern essentials. Premium comfort.
+          A clean wardrobe built for everyday confidence.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#shop" class="btn btn-dark">
+            SHOP COLLECTION
+            <span>→</span>
+          </a>
+
+          <a href="#story" class="text-link">
+            DISCOVER NAYYEK
+          </a>
+
+        </div>
+
+
+        <div class="trust">
+
+          <span>✓ Premium quality</span>
+          <span>✓ Secure checkout</span>
+          <span>✓ Easy returns</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-art">
+
+        <div class="fashion-card">
+
+          <div class="model-shape">
+            N
+          </div>
+
+          <div class="art-caption">
+
+            NAYYEK
+
+            <br>
+
+            <small>
+              WEAR YOUR IDENTITY
+            </small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MARQUEE -->
+    <section class="ticker">
+
+      <span>PREMIUM ESSENTIALS</span>
+      <span>✦</span>
+      <span>MODERN FIT</span>
+      <span>✦</span>
+      <span>EVERYDAY LUXURY</span>
+      <span>✦</span>
+      <span>NAYYEK</span>
+
+    </section>
+
+
+    <!-- COLLECTIONS -->
+    <section id="collections" class="section">
+
+      <div class="section-head">
+
+        <div>
+
+          <p class="eyebrow">
+            CURATED FOR YOU
+          </p>
+
+          <h2>
+            SHOP BY COLLECTION
+          </h2>
+
+        </div>
+
+        <p>
+          Minimal pieces, made to mix and match.
+        </p>
+
+      </div>
+
+
+      <div class="collection-grid">
+
+        <a
+          href="#shop"
+          onclick="setCategory('Men')"
+          class="collection men"
+        >
+
+          <span>MEN</span>
+
+          <small>
+            SHOP NOW →
+          </small>
+
+        </a>
+
+
+        <a
+          href="#shop"
+          onclick="setCategory('Women')"
+          class="collection women"
+        >
+
+          <span>WOMEN</span>
+
+          <small>
+            SHOP NOW →
+          </small>
+
+        </a>
+
+
+        <a
+          href="#shop"
+          onclick="setCategory('Kids')"
+          class="collection kids"
+        >
+
+          <span>KIDS</span>
+
+          <small>
+            SHOP NOW →
+          </small>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+    <section id="shop" class="section products-section">
+
+      <div class="section-head">
+
+        <div>
+
+          <p class="eyebrow">
+            THE EDIT
+          </p>
+
+          <h2>
+            BESTSELLERS
+          </h2>
+
+        </div>
+
+
+        <div class="product-filters">
+
+          <select
+            id="categoryFilter"
+            onchange="renderProducts()"
+          >
+
+            <option value="all">
+              All Products
+            </option>
+
+            <option value="Men">
+              Men
+            </option>
+
+            <option value="Women">
+              Women
+            </option>
+
+            <option value="Kids">
+              Kids
+            </option>
+
+          </select>
+
+
+          <select
+            id="sortProducts"
+            onchange="renderProducts()"
+          >
+
+            <option value="featured">
+              Featured
+            </option>
+
+            <option value="low">
+              Price: Low to High
+            </option>
+
+            <option value="high">
+              Price: High to Low
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCTS WILL LOAD HERE -->
+      <div
+        id="products"
+        class="product-grid"<section class="trust-section">
+
+    <h2>Why Choose nayyek?</h2>
+
+    <div class="trust-grid">
+
+        <div class="trust-card">
+            <h3>🚚 Free Shipping</h3>
+            <p>Free delivery on orders above ₹5,000.</p>
+        </div>
+
+        <div class="trust-card">
+            <h3>🔄 Easy Returns</h3>
+            <p>7-day hassle-free return & exchange.</p>
+        </div>
+
+        <div class="trust-card">
+            <h3>⭐ Premium Quality</h3>
+            <p>Comfortable fabrics with premium finishing.</p>
+        </div>
+
+        <div class="trust-card">
+            <h3>🔒 Secure Checkout</h3>
+            <p>Your payments and data are protected.</p>
+        </div>
+
+    </div>
+
+</section>
+      ></div>
+
+    </section>
+
+
+    <!-- PREMIUM EDITORIAL -->
+    <section class="editorial">
+
+      <div>
+
+        <p class="eyebrow">
+          NAYYEK ESSENTIALS
+        </p>
+
+        <h2>
+          LESS NOISE.<br>
+          MORE STYLE.
+        </h2>
+
+        <p>
+          Versatile silhouettes designed for work,
+          weekends, travel and everything between.
+        </p>
+
+        <a href="#shop" class="text-link">
+          EXPLORE ESSENTIALS →
+        </a>
+
+      </div>
+
+
+      <div class="editorial-box">
+
+        N
+
+      </div>
+
+    </section>
+
+
+    <!-- BRAND STORY -->
+    <section
+      id="story"
+      class="about section"
+    >
+
+      <p class="eyebrow">
+        OUR PHILOSOPHY
+      </p>
+
+      <h2>
+        FASHION THAT<br>
+        FEELS LIKE YOU.
+      </h2>
+
+      <p>
+
+        We believe good fashion should express
+        who you are without trying too hard.
+
+        NAYYEK focuses on comfort, clean design
+        and timeless everyday pieces.
+
+      </p>
+
+    </section>
+
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+
+      <p class="eyebrow">
+        JOIN NAYYEK
+      </p>
+
+      <h2>
+        GET 10% OFF YOUR<br>
+        FIRST ORDER.
+      </h2>
+
+      <p>
+        Sign up for new drops,
+        private offers and style updates.
+      </p>
+
+
+      <form onsubmit="subscribe(event)">
+
+        <input
+          type="email"
+          placeholder="Email address"
+          required
+        >
+
+        <button class="btn btn-dark">
+          JOIN NOW
+        </button>
+
+      </form>
+
+
+      <small id="subscribeMsg"></small>
+
+    </section>
+
+  </main><section class="reviews-section">
+
+    <h2>What Our Customers Say</h2>
+
+    <div class="reviews-grid">
+
+        <div class="review-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"Excellent quality! The fabric feels premium and the fit is perfect."</p>
+            <h4>— Rahul S.</h4>
+        </div>
+
+        <div class="review-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"Fast delivery and amazing packaging. Highly recommended."</p>
+            <h4>— Priya M.</h4>
+        </div>
+
+        <div class="review-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"One of the best clothing brands I've purchased from."</p>
+            <h4>— Arjun K.</h4>
+        </div>
+
+    </div><section class="featured-collection"><section class="categories">
+
+    <h2>Shop By Category</h2>
+
+    <div class="category-grid">
+
+        <div class="category-card">
+            <img src="images/printed-shorts.jpg" alt="Men">
+            <h3>Men</h3>
+        </div>
+
+        <div class="category-card">
+            <img src="images/printed-shorts.jpg" alt="Women">
+            <h3>Women</h3>
+        </div>
+
+        <div class="category-card">
+            <img src="images/printed-shorts.jpg" alt="Kids">
+            <h3>Kids</h3>
+        </div>
+
+    </div>
+
+</section>
+
+    <div class="featured-left">
+        <span>NEW COLLECTION</span>
+
+        <h2>Premium Essentials 2026</h2>
+
+        <p>
+            Discover our latest collection designed for everyday comfort,
+            premium quality and timeless style.
+        </p>
+
+        <a href="#products" class="featured-btn">
+            SHOP NOW →
+        </a>
+    </div>
+
+    <div class="featured-right">
+        <img src="images/printed-shorts.jpg" alt="NAYYEK Collection">
+    </div>
+
+</section>
+
+
+
+
+  <section id="contact" class="contact-section">
+
+  <h2>Contact nayyek</h2>
+
+  <div class="contact-grid">
+
+    <div class="contact-card">
+      <h3>WhatsApp</h3>
+      <p>+91 9832642446</p>
+    </div>
+
+    <div class="contact-card">
+      <h3>Email</h3>
+      <p>nayyeksupport@gmail.com</p>
+    </div>
+
+    <div class="contact-card">
+      <h3>Support</h3>
+      <p>Mon - Sat | 10:00 AM - 7:00 PM</p>
+    </div>
+
+  </div>
+
+</section>
+
+<a
+  href="https://wa.me/919832642446?text=Hi%20nayyek%2C%20I%20want%20to%20order."
+  class="whatsapp-float"
+  target="_blank"
+>
+  💬
+</a><!-- FOOTER -->
+  <footer id="contact">
+
+    <div class="footer-brand">
+
+      <a href="#" class="logo">
+        NAYYEK<span>.</span>
+      </a>
+
+      <p>
+        Wear Your Identity.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        SHOP
+      </h4>
+
+      <a href="#shop">
+        Men
+      </a>
+
+      <a href="#shop">
+        Women
+      </a>
+
+      <a href="#shop">
+        Kids
+      </a>
+
+      <a href="#shop">
+        New Arrivals
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        HELP
+      </h4>
+
+      <a href="#">
+        Shipping
+      </a>
+
+      <a href="#">
+        Returns
+      </a>
+
+      <a href="#">
+        Size Guide
+      </a>
+
+      <a href="#">
+        FAQ
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>CONTACT</h4>
+
+<p>📧 nayyeksupport@gmail.com</p>
+<p>📞 +91 9832642446</p>
+<p>📍 West Bengal, India</p>
+
+<a href="https://wa.me/919832642446" target="_blank" class="footer-whatsapp">
+    Order on WhatsApp →
+</a>
+
+<div class="footer-social">
+
+<a href="https://instagram.com/" target="_blank">📷 Instagram</a>
+
+<a href="https://facebook.com/" target="_blank">📘 Facebook</a>
+
+<a href="https://youtube.com/" target="_blank">▶️ YouTube</a>
+
+</div>
+    <div class="copyright">
+
+      © 2026 NAYYEK.
+      All rights reserved.
+
+    </div><div class="payment-icons">
+    💳 Visa &nbsp;
+    💳 Mastercard &nbsp;
+    🛍️ UPI &nbsp;
+    📱 PhonePe &nbsp;
+    📲 Google Pay
+</div>
+
+  </footer>
+
+
+  <!-- CART DRAWER -->
+  <aside
+    id="cartPanel"
+    class="cart-panel"
+  >
+
+    <div class="cart-head">
+
+      <h3>
+        Your Bag
+      </h3>
+
+     <button
+  type="button"
+  class="cart-btn"
+  onclick="toggleCart()"
+  aria-label="Shopping Cart"
+>
+  🛒 <span id="cartCount">0</span>
+</button>
+
+    </div>
+
+
+    <div id="cartItems"></div>
+
+
+    <div class="cart-total">
+
+      <span>
+        Subtotal
+      </span>
+
+      <strong id="cartTotal">
+        ₹0
+      </strong>
+
+    </div>
+
+
+    <p id="freeShippingMsg"></p>
+
+
+    <button
+      class="btn btn-dark full"
+      onclick="checkout()"
+    >
+      CHECKOUT
+    </button>
+
+
+    <p class="secure-checkout">
+      🔒 Secure checkout
+    </p>
+
+  </aside>
+
+
+  <!-- WISHLIST DRAWER -->
+  <aside
+    id="wishlistPanel"
+    class="cart-panel drawer"
+  >
+
+    <div class="cart-head">
+
+      <h3>
+        Wishlist
+      </h3>
+
+      <button onclick="closeDrawers()">
+        ×
+      </button>
+
+    </div>
+
+
+    <div id="wishlistItems"></div>
+
+  </aside>
+
+
+  <!-- OVERLAY -->
+  <div
+    id="overlay"
+    class="overlay"
+    onclick="closeDrawers()"
+  ></div>
+
+
+  <!-- PRODUCT QUICK VIEW -->
+  <div
+    id="productModal"
+    class="modal"
+  >
+
+    <div class="modal-box">
+
+      <button
+        class="modal-close"
+        onclick="closeModal()"
+      >
+        ×
+      </button>
+
+      <div id="modalContent"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+
+</body>
+</html>
