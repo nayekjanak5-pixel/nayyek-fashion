@@ -18,7 +18,7 @@ const products = [
   price: 1599,
   oldPrice: 1999,
   badge: "NEW",
-  image: "images/printed-shorts.jpg",
+  image: "https://static.vecteezy.com/system/resources/thumbnails/083/933/835/small/beautiful-and-inspiring-picture-detailing-a-bright-hot-air-balloon-over-river-pure-cozy-perfect-for-creatives-moods-stock-image-free-photo.jpeg",
 
   rating: 4.8,
   reviews: 24,
